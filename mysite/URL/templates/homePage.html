@@ -1,0 +1,31 @@
+
+
+<head>
+    <title>Homepage</title>
+</head>
+
+
+<body>
+    <h1>---URL Shortener Homepage---</h1>
+
+    <h3>Input URL extension below</h3>
+    
+    <h4>Note: If URL is 'www.example.com/long_URL_extension1234567890', please input only 'long_URL_extension1234567890'</h4>
+    <h4>When entering short URL in URL bar, enter 'www.example.com/generated_shortened_URL'</h4>
+    <form method="get">
+        <input id="search_box" type="text" name="searchBox" placeholder='Input long URL'>
+        <input type="submit" value="Submit" name="searchBtn">
+    </form>
+
+    {% if not duplicate %}
+        {% if URLTyped %}
+            <h3> You inputted {{searched}}</h3>
+            <h4> Your short URL is {{selectedURL.0.shortURL}}</h4>
+        {% endif %}
+    {% endif %}
+
+    {% if duplicate %}
+        <h1>That URL has already been shortened to "{{selectedURL.0.shortURL}}"</h1>
+    {% endif %}
+
+</body>

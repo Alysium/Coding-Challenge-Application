@@ -1,0 +1,24 @@
+<head>
+
+
+
+</head>
+
+<body>
+    
+
+    {% if notFound %}
+        <h1>URL cannot be found</h1>
+
+    {% endif %}
+    {% if not notFound %}    
+        <h1>'{{selectedURL.0.longURL}}' long URL found</h1>
+        <h1>'{{selectedURL.0.shortURL}}' corresponding short URL found</h1>
+        <h3>This URL was visited {{selectedURL.0.visits}} times.</h3>
+    {% endif %}
+
+    <a href="{% url 'URLs:URLhomepage'%}">Return to Homepage</a>
+
+    
+
+</body>
